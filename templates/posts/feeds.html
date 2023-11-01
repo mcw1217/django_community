@@ -1,0 +1,64 @@
+{% extends 'layout.html'%}
+{% block title %} Home {%endblock%}
+{% block content %}
+
+
+<div class="logo">
+    HETA
+    
+</div>
+<div class="con1">
+<div class="base">
+    <ul>
+      <li class="item">
+        <hr class='bhr'>
+         <p class="uitem">남성의류</p>
+         <hr>
+          <ul>
+              <li class="bitem">여성1</li>
+              <li class="bitem">여성2</li>
+              <li class="bitem">여성3</li>
+          </ul>
+      </li>
+      <li class="item">
+        <hr class='bhr'>
+         <p class="uitem">남성의류</p>
+         <hr>
+          <ul>
+              <li class="bitem">남성1</li>
+              <li class="bitem">남성1</li>
+              <li class="bitem">남성1</li>
+          </ul>
+      </li>
+      <li class="item">
+        <hr class='bhr'>
+        <p class="uitem">남성의류</p>
+        <hr>
+          <ul>
+              <li class="bitem">키즈1</li>
+              <li class="bitem">키즈2</li>
+              <li class="bitem">키즈</li>
+          </ul>
+          <hr class='bhr'>
+      </li>
+  </ul> 
+</div>
+
+
+  
+
+<div id="feeds" class="mainboard">
+{%for post in posts%}
+    <article class="post">
+        <header class="post-header">
+            {% if post.user.profile_image%}
+                <img src="{{ post.user.profile_image.url }}">
+            {% endif %}
+            <span>{{ post.user.username }} </span>
+        </header>
+    </article>
+    {%endfor%}
+</div>
+</div>
+
+{% endblock %}
